@@ -1,6 +1,6 @@
 import Filter from './Filter';
 import ContactForm from './ContactForm';
-import ContactList from './ContactList';
+import ContactList from './Contacts';
 import s from './App.module.css';
 
 const App = () => {

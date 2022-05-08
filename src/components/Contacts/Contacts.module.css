@@ -1,3 +1,12 @@
+.contactsList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.title{
+  text-align: center;
+}
+
 .contactsItem {
   display: flex;
   align-items: center;
@@ -7,9 +16,11 @@
     -23px 0 20px -23px rgba(0, 0, 0, 0.6), 23px 0 20px -23px rgba(0, 0, 0, 0.6),
     0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
+
 .contactsItem:not(:last-child) {
   margin-bottom: 20px;
 }
+
 .contactText {
   font-weight: 700;
 }

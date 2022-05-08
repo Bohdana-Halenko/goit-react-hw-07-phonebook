@@ -1,15 +1,14 @@
 import s from './Filter.module.css';
-
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from 'redux/contactsSlice';
+import { getFilter } from '../../redux/phonebook/selectors';
+import { filterChangeAction } from '../../redux/phonebook/actions';
 
-const Filter = () => {
+
+export default function Filter() {
+  const value = useSelector(getFilter);
   const dispatch = useDispatch();
-  const filter = useSelector(state => state.contacts.filter);
-
-  const handleFilterChange = e => {
-    dispatch(setFilter(e.target.value));
-  };
+  const onFilterChange = event =>
+    dispatch(filterChangeAction(event.target.value));
 
   return (
     <div className={s.filterWrap}>
@@ -17,19 +16,11 @@ const Filter = () => {
         Find contact by name
         <input
           type="text"
-          name="filter"
-          onChange={handleFilterChange}
-          value={filter}
+          value={value}
+          onChange={onFilterChange}
           className={s.input}
         />
       </label>
     </div>
   );
 };
-
-// Filter.propTypes = {
-//   onChange: PropeTypes.func,
-//   value: PropeTypes.string,
-// };
-
-export default Filter;
